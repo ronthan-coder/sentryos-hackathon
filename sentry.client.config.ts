@@ -25,4 +25,8 @@ Sentry.init({
       blockAllMedia: true,
     }),
   ],
+
+  // Enable structured logging and custom metrics
+  enableLogs: true,
+  enableMetrics: true,
 });

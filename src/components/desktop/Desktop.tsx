@@ -7,6 +7,7 @@ import { DesktopIcon } from './DesktopIcon'
 import { Notepad } from './apps/Notepad'
 import { FolderView, FolderItem } from './apps/FolderView'
 import { Chat } from './apps/Chat'
+import { ParkingSF } from './apps/ParkingSF'
 import { useState } from 'react'
 
 const INSTALL_GUIDE_CONTENT = `# SentryOS Install Guide
@@ -111,6 +112,23 @@ function DesktopContent() {
     })
   }
 
+  const openParkingSF = () => {
+    openWindow({
+      id: 'parking-sf',
+      title: 'SF Parking Assistant',
+      icon: '🚗',
+      x: 250,
+      y: 100,
+      width: 450,
+      height: 600,
+      minWidth: 400,
+      minHeight: 500,
+      isMinimized: false,
+      isMaximized: false,
+      content: <ParkingSF />
+    })
+  }
+
   const handleDesktopClick = () => {
     setSelectedIcon(null)
   }
@@ -161,6 +179,14 @@ function DesktopContent() {
           onDoubleClick={openChatWindow}
           selected={selectedIcon === 'chat'}
           onSelect={() => setSelectedIcon('chat')}
+        />
+        <DesktopIcon
+          id="parking-sf"
+          label="SF Parking"
+          icon="car"
+          onDoubleClick={openParkingSF}
+          selected={selectedIcon === 'parking-sf'}
+          onSelect={() => setSelectedIcon('parking-sf')}
         />
       </div>
 

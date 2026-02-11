@@ -1,12 +1,12 @@
 'use client'
 
 import { useRef } from 'react'
-import { FileText, Folder, Terminal, Settings, MessageCircle } from 'lucide-react'
+import { FileText, Folder, Terminal, Settings, MessageCircle, Car } from 'lucide-react'
 
 interface DesktopIconProps {
   id: string
   label: string
-  icon: 'file' | 'folder' | 'terminal' | 'settings' | 'document' | 'chat'
+  icon: 'file' | 'folder' | 'terminal' | 'settings' | 'document' | 'chat' | 'car'
   onDoubleClick: () => void
   selected?: boolean
   onSelect?: () => void
@@ -19,6 +19,7 @@ const iconMap = {
   settings: Settings,
   document: FileText,
   chat: MessageCircle,
+  car: Car,
 }
 
 export function DesktopIcon({ label, icon, onDoubleClick, selected, onSelect }: DesktopIconProps) {
